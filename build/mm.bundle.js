@@ -19954,13 +19954,20 @@ angular.module('mm.core.sidemenu')
 }]);
 
 angular.module('mm.core.sidemenu')
-.controller('mmSideMenuCtrl', ["$scope", "$state", "$mmSideMenuDelegate", "$mmSitesManager", "$mmSite", "$mmEvents", "$timeout", "mmCoreEventLanguageChanged", "mmCoreEventSiteUpdated", "$mmSideMenu", "$mmCourses", function($scope, $state, $mmSideMenuDelegate, $mmSitesManager, $mmSite, $mmEvents,
-            $timeout, mmCoreEventLanguageChanged, mmCoreEventSiteUpdated, $mmSideMenu, $mmCourses) {
+.controller('mmSideMenuCtrl', ["$scope", "$state", "$mmSideMenuDelegate", "$mmSitesManager", "$mmSite", "$mmEvents", "$timeout", "mmCoreEventLanguageChanged", "mmCoreEventSiteUpdated", "$mmSideMenu", "$mmCourses","$mmLoginHelper","$mmUtil", function($scope, $state, $mmSideMenuDelegate, $mmSitesManager, $mmSite, $mmEvents,
+            $timeout, mmCoreEventLanguageChanged, mmCoreEventSiteUpdated, $mmSideMenu, $mmCourses,$mmLoginHelper,$mmUtil) {
     $mmSideMenu.setScope($scope);
     $scope.handlers = $mmSideMenuDelegate.getNavHandlers();
     $scope.areNavHandlersLoaded = $mmSideMenuDelegate.areNavHandlersLoaded;
     loadSiteInfo();
-    $scope.logout = function() {
+    $scope.logout = function(e, id) {
+             $mmSitesManager.deleteSite(id).then(function() {
+                 $mmSitesManager.hasNoSites().then(function() {
+                     $mmLoginHelper.goToAddSite();
+                 });
+             }, function() {
+                 $mmUtil.showErrorModal('mm.login.errordeletesite', true);
+             });
         $mmSitesManager.logout().finally(function() {
             $state.go('mm_login.sites');
         });
