@@ -19968,6 +19968,7 @@ angular.module('mm.core.sidemenu')
     function loadSiteInfo() {
         var config = $mmSite.getStoredConfig();
         $scope.siteinfo = $mmSite.getInfo();
+        $scope.sid = $mmSite.getId();
         $scope.logoutLabel = 'mm.sidemenu.' + (config && config.tool_mobile_forcelogout == "1" ? 'logout': 'changesite');
         $scope.showWeb = !$mmSite.isFeatureDisabled('$mmSideMenuDelegate_website');
         $scope.showHelp = !$mmSite.isFeatureDisabled('$mmSideMenuDelegate_help');
