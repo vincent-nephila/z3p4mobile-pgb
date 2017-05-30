@@ -19961,14 +19961,8 @@ angular.module('mm.core.sidemenu')
     $scope.areNavHandlersLoaded = $mmSideMenuDelegate.areNavHandlersLoaded;
     loadSiteInfo();
     $scope.logout = function() {
-             $mmSitesManager.deleteSite($mmSite.getId()).then(function() {
-                     $mmLoginHelper.goToAddSite();
-             }, function() {
-                 $mmUtil.showErrorModal('mm.login.errordeletesite', true);
-             });
-        $mmSitesManager.logout().finally(function() {
-            $state.go('mm_login.sites');
-        });
+        $mmSitesManager.deleteSite($mmSite.getId());
+        $state.go('mm_login.sites');
     };
     function loadSiteInfo() {
         var config = $mmSite.getStoredConfig();
