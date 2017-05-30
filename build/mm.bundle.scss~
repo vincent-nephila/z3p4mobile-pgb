@@ -52,8 +52,8 @@ $item-input-padding: 16px !default;
  * App Branding
  */
 .mm-bglogo {
-  background-color: #ff5c00; /* Change this to add a bg image or change color */
-  background: -webkit-radial-gradient(#ff7600, #ff5c00);
+  background-color: white; /* Change this to add a bg image or change color */
+  background: white;
   background: radial-gradient(#ff7600, #ff5c00);
   background-repeat: no-repeat;
   background-position: center center;
@@ -81,9 +81,9 @@ $item-input-padding: 16px !default;
   }
 
   .spinner {
-    color: white;
-    stroke: white;
-    fill: white;
+    color: black;
+    stroke: black;
+    fill: black;
   }
 }
 
