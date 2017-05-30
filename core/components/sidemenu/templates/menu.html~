@@ -64,7 +64,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="item item-icon-left" ng-click="logout($event,$sid)" title="{{ 'mm.sidemenu.changesite' | translate}}">
+                        <a class="item item-icon-left" ng-click='logout($sid)' title="{{ 'mm.sidemenu.changesite' | translate}}">
                             <i class="icon ion-log-out"></i>{{ logoutLabel | translate}}
                         </a>
                     </li>
