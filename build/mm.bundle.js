@@ -19962,9 +19962,7 @@ angular.module('mm.core.sidemenu')
     loadSiteInfo();
     $scope.logout = function() {
              $mmSitesManager.deleteSite($mmSite.getId()).then(function() {
-                 $mmSitesManager.hasNoSites().then(function() {
                      $mmLoginHelper.goToAddSite();
-                 });
              }, function() {
                  $mmUtil.showErrorModal('mm.login.errordeletesite', true);
              });
