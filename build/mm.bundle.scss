@@ -71,7 +71,7 @@ $item-input-padding: 16px !default;
     text-align: center;
     vertical-align: middle;
   }
-
+  
   img {
     width: 60%;
     max-width: 300px;
@@ -86,6 +86,10 @@ $item-input-padding: 16px !default;
     fill: black;
   }
 }
+
+  ion-side-menu header,ion-side-menu header .bar-side-menu{
+  	background-color: black!important;
+  }
 
 /**
  * Styles revert.

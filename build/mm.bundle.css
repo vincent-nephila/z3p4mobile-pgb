@@ -10541,6 +10541,10 @@ a.button {
     color: black;
     stroke: black;
     fill: black; }
+    
+  ion-side-menu header,ion-side-menu header .bar-side-menu{
+  	background-color: black!important;
+  }
 
 /**
  * Styles revert.

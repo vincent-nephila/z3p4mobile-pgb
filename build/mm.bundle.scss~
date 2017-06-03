@@ -54,7 +54,7 @@ $item-input-padding: 16px !default;
 .mm-bglogo {
   background-color: white; /* Change this to add a bg image or change color */
   background: white;
-  background: radial-gradient(#ff7600, #ff5c00);
+  background: white;
   background-repeat: no-repeat;
   background-position: center center;
   position: absolute;
@@ -71,7 +71,11 @@ $item-input-padding: 16px !default;
     text-align: center;
     vertical-align: middle;
   }
-
+  
+  ion-side-menu header,ion-side-menu header .bar-side-menu{
+  	background-color: black!important;
+  }
+  
   img {
     width: 60%;
     max-width: 300px;
